@@ -17,7 +17,8 @@ struct UserRepositoryView: View {
         
         VStack(alignment: .leading, spacing: 16){
             // Mark: - User Ropos
-            Text("User Ropos").font(.title)
+            Text("User Ropository").font(.title)
+                .foregroundColor(Color.accentColor)
             ForEach(ContentVM.userRepository,id: \.id){ rep in
                     VStack(alignment: .leading, spacing: 8){
                         Text(rep.name).font(.headline)
@@ -25,7 +26,7 @@ struct UserRepositoryView: View {
                         HStack(){
                             Text("⭐️ 5 Star").font(.callout)
                             Text("🛠 2 Fork").font(.callout)
-                            Text("🟢 Swift").font(.callout)                            
+                            Text("🟢 Swift").font(.callout)
                         }
                     }.padding(.bottom ,16)
             }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
