@@ -20,7 +20,7 @@ struct RequestUserView: View {
             TextField("Enter you'r github username...", text: $username)
                    .textFieldStyle(RoundedBorderTextFieldStyle())
             Button(action: {
-                print("Hello")                
+                print("Reloading Data")                
             }){
                 Text("Request")
                 .font(.headline)
