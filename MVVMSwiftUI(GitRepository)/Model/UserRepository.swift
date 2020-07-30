@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserRepositoryModel : Identifiable , Codable{
+struct UserRepositoryModel : Identifiable , Decodable, Hashable{
     var id, forks_count, stargazers_count: Int
     var name, full_name, language : String
     var size : Double

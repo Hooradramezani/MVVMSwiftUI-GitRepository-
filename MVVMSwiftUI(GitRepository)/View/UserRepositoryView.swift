@@ -7,29 +7,28 @@
 //
 
 import SwiftUI
+import Combine
 
 struct UserRepositoryView: View {
     
-    let contentViewModel : ContentViewModel = ContentViewModel()
+    let ContentVM : RepositoryViewModel = RepositoryViewModel()
 
-    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 16){
             // Mark: - User Ropos
             Text("User Ropos").font(.title)
-            
-                ForEach(contentViewModel.UserRepository,id: \.id){ rep in
+            ForEach(ContentVM.userRepository,id: \.id){ rep in
                     VStack(alignment: .leading, spacing: 8){
                         Text(rep.name).font(.headline)
                         Text(rep.full_name).font(.subheadline)
                         HStack(){
-                            Text("⭐️ 5 Star").font(.body)
-                            Text("🛠 2 Fork").font(.body)
-                            Text("🟢 Swift").font(.body)                            
+                            Text("⭐️ 5 Star").font(.callout)
+                            Text("🛠 2 Fork").font(.callout)
+                            Text("🟢 Swift").font(.callout)                            
                         }
                     }.padding(.bottom ,16)
-                }
+            }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
             
             // end of - User Repos
         }

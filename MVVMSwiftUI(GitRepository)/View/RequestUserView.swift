@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RequestUserView: View {
     
     @State var username: String = ""
+    
 
     var body: some View {
         
@@ -18,7 +20,7 @@ struct RequestUserView: View {
             TextField("Enter you'r github username...", text: $username)
                    .textFieldStyle(RoundedBorderTextFieldStyle())
             Button(action: {
-                print("Hello")
+                print("Hello")                
             }){
                 Text("Request")
                 .font(.headline)
