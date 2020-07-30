@@ -15,6 +15,7 @@
 		7090785424D2A20900C28DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7090785224D2A20900C28DDF /* LaunchScreen.storyboard */; };
 		7090785F24D2A20900C28DDF /* MVVMSwiftUI_GitRepository_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090785E24D2A20900C28DDF /* MVVMSwiftUI_GitRepository_Tests.swift */; };
 		7090786A24D2A20900C28DDF /* MVVMSwiftUI_GitRepository_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090786924D2A20900C28DDF /* MVVMSwiftUI_GitRepository_UITests.swift */; };
+		70F70D9324D2B2EA00B97F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F70D9224D2B2E900B97F04 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7090786524D2A20900C28DDF /* MVVMSwiftUI(GitRepository)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVMSwiftUI(GitRepository)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7090786924D2A20900C28DDF /* MVVMSwiftUI_GitRepository_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSwiftUI_GitRepository_UITests.swift; sourceTree = "<group>"; };
 		7090786B24D2A20900C28DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F70D9224D2B2E900B97F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,12 @@
 		7090784624D2A20100C28DDF /* MVVMSwiftUI(GitRepository) */ = {
 			isa = PBXGroup;
 			children = (
+				7090787A24D2B06300C28DDF /* Service */,
+				7090787724D2A39D00C28DDF /* Model */,
+				7090787924D2A3B100C28DDF /* View */,
+				7090787824D2A3A900C28DDF /* ViewModel */,
 				7090784724D2A20100C28DDF /* AppDelegate.swift */,
 				7090784924D2A20100C28DDF /* SceneDelegate.swift */,
-				7090784B24D2A20100C28DDF /* ContentView.swift */,
 				7090784D24D2A20900C28DDF /* Assets.xcassets */,
 				7090785224D2A20900C28DDF /* LaunchScreen.storyboard */,
 				7090785524D2A20900C28DDF /* Info.plist */,
@@ -134,6 +139,36 @@
 				7090786B24D2A20900C28DDF /* Info.plist */,
 			);
 			path = "MVVMSwiftUI(GitRepository)UITests";
+			sourceTree = "<group>";
+		};
+		7090787724D2A39D00C28DDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70F70D9224D2B2E900B97F04 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7090787824D2A3A900C28DDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7090787924D2A3B100C28DDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7090784B24D2A20100C28DDF /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7090787A24D2B06300C28DDF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F70D9324D2B2EA00B97F04 /* User.swift in Sources */,
 				7090784824D2A20100C28DDF /* AppDelegate.swift in Sources */,
 				7090784A24D2A20100C28DDF /* SceneDelegate.swift in Sources */,
 				7090784C24D2A20100C28DDF /* ContentView.swift in Sources */,
