@@ -2,7 +2,6 @@
 //  ServiceProtocols.swift
 //  MVVMSwiftUI(GitRepository)
 //
-//  Created by Hoorad on 7/30/20.
 //  Copyright © 2020 Hoorad. All rights reserved.
 //
 
