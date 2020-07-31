@@ -22,18 +22,12 @@ class ProfileViewModel : ObservableObject{
     
     var service : ServiceController = ServiceController()
     
-        
     
     init() {
         loadData()
     }
     
     func loadData(){
-        
-//        let UserProfile = [UserProfileModel(id: 0, login: "Hoorad", bio: "Some Bio Come Here And Shin Like a Dimond")
-//        ]
-//        self.userProfile = UserProfile
-        
         service.RequestFor(api: .UserProfile) { (data, err) in
             if let Data = data {
                 self.DecodeAndUpdateData(json: Data)
@@ -41,7 +35,6 @@ class ProfileViewModel : ObservableObject{
                 print(err.debugDescription)
             }
         }
-        
     }
     
     func DecodeAndUpdateData(json: Data) {
@@ -49,7 +42,6 @@ class ProfileViewModel : ObservableObject{
         if let jsonPetitions = try? decoder.decode(UserProfileModel.self, from: json) {
             DispatchQueue.main.async {
                 self.userProfile = [jsonPetitions]
-                print("Don")
             }
         }
     }

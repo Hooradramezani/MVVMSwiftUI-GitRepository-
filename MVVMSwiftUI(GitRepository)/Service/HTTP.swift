@@ -15,8 +15,6 @@ public enum HTTPMethod: String {
 }
 
 
-
-
 public typealias HTTPParameters = [String: Any]?
 public typealias HTTPHeaders = [String: String]?
 

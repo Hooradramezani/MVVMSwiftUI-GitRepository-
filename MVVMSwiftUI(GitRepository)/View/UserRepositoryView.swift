@@ -19,7 +19,7 @@ struct UserRepositoryView: View {
         VStack(alignment: .leading, spacing: 16){
             // Mark: - User Ropos
             Text("User Ropository").font(.title)
-                .foregroundColor(Color.accentColor)
+                .foregroundColor(Color.gray)
             ForEach(ContentVM.userRepository,id: \.id){ rep in
                     VStack(alignment: .leading, spacing: 8){
                         Text(rep.name).font(.headline)

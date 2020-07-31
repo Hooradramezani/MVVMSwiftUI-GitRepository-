@@ -11,7 +11,7 @@ import Combine
 
 struct UserProfileView: View {
     
-    @ObservedObject var userProfile = ProfileViewModel()
+    @ObservedObject var ProfileVM = ProfileViewModel()
     
     var body: some View {
         
@@ -20,7 +20,7 @@ struct UserProfileView: View {
             // Mark: - User Profile
             Text("User Profile")
                 .font(.title)
-                .foregroundColor(Color.accentColor)
+                .foregroundColor(Color.gray)
             
             VStack(alignment: .leading, spacing: 16){
                 
@@ -33,10 +33,11 @@ struct UserProfileView: View {
                         .scaledToFill()
                         .clipShape(Circle())
                     VStack (alignment: .leading, spacing: 8){
-                        Text(userProfile.userProfile.first?.login ?? "FullName")
+                        
+                        Text(ProfileVM.userProfile.first?.login ?? "FullName")
                             .font(.headline)
                              .lineLimit(4)
-                        Text(userProfile.userProfile.first?.bio ?? "Bio")
+                        Text(ProfileVM.userProfile.first?.bio ?? "Bio")
                              .font(.subheadline)
                              .lineLimit(4)
                     }
@@ -50,21 +51,22 @@ struct UserProfileView: View {
                     
                     Text("Contact info")
                         .font(.subheadline)
+                    
                     HStack(){
                         Text("✉️").font(.subheadline)
-                        Text("Hooradramezani@gmail.com").font(.subheadline)
+                        Text(ProfileVM.userProfile.first?.email ?? "").font(.subheadline)
+                    }
+                    HStack{
+                        Text("👥").font(.subheadline)
+                        Text("\(ProfileVM.userProfile.first?.followers ?? 99) Followers • \(ProfileVM.userProfile.first?.following ?? 99) Following").font(.subheadline)
+                    }
+                    HStack{
+                        Text("📍").font(.subheadline)
+                        Text(ProfileVM.userProfile.first?.location ?? "Location").font(.subheadline)
                     }
                     HStack{
                         Text("Ⓜ️").font(.subheadline)
                         Text("@hoorad_r").font(.subheadline)
-                    }
-                    HStack{
-                        Text("👥").font(.subheadline)
-                        Text("1 Follower • 16 Following").font(.subheadline)
-                    }
-                    HStack{
-                        Text("📍").font(.subheadline)
-                        Text("Mazandaran Provider").font(.subheadline)
                     }
                     HStack{
                         Text("📎").font(.subheadline)
