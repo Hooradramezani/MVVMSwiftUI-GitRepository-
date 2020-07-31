@@ -34,33 +34,28 @@ struct UserProfileView: View {
                         .clipShape(Circle())
                     VStack (alignment: .leading, spacing: 8){
                         Text(userProfile.userProfile.first?.login ?? "FullName")
-                             .font(.headline)
-                             .font(.subheadline)
+                            .font(.headline)
                              .lineLimit(4)
                         Text(userProfile.userProfile.first?.bio ?? "Bio")
                              .font(.subheadline)
-                             .font(.subheadline)
-                             .lineLimit(5)
+                             .lineLimit(4)
                     }
                 }
                 .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 // end of - User Quick info
                 
                 
-                Text("Contact info").font(.subheadline).bold()
-                
-                
                 VStack(alignment: .leading, spacing: 8){
                     // Mark: - User Urls
+                    
+                    Text("Contact info")
+                        .font(.subheadline)
                     HStack(){
                         Text("✉️").font(.subheadline)
                         Text("Hooradramezani@gmail.com").font(.subheadline)
                     }
                     HStack{
-                        Image("Twitter_icon").resizable()
-                            .frame(width: 20, height: 20)
-                            .scaledToFit()
-                            .clipped()
+                        Text("Ⓜ️").font(.subheadline)
                         Text("@hoorad_r").font(.subheadline)
                     }
                     HStack{
