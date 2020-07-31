@@ -14,7 +14,7 @@ class ProfileViewModel : ObservableObject{
     
     var didChange = PassthroughSubject<ProfileViewModel,Never>()
     
-    var userProfile = [UserProfileModel]() {
+    @Published var userProfile = [UserProfileModel]() {
         didSet{
             didChange.send(self)
         }
@@ -30,11 +30,28 @@ class ProfileViewModel : ObservableObject{
     
     func loadData(){
         
-        let UserProfile = [UserProfileModel(id: 0, username: "Hoorad", bio: "Some Bio Come Here And Shin Like a Dimond")
-        ]
-        self.userProfile = UserProfile
+//        let UserProfile = [UserProfileModel(id: 0, login: "Hoorad", bio: "Some Bio Come Here And Shin Like a Dimond")
+//        ]
+//        self.userProfile = UserProfile
+        
+        service.RequestFor(api: .UserProfile) { (data, err) in
+            if let Data = data {
+                self.DecodeAndUpdateData(json: Data)
+            }else{
+                print(err.debugDescription)
+            }
+        }
         
     }
-                
     
+    func DecodeAndUpdateData(json: Data) {
+        let decoder = JSONDecoder()
+        if let jsonPetitions = try? decoder.decode(UserProfileModel.self, from: json) {
+            DispatchQueue.main.async {
+                self.userProfile = [jsonPetitions]
+                print("Don")
+            }
+        }
+    }
+        
 }

@@ -11,7 +11,8 @@ import Combine
 
 struct UserRepositoryView: View {
     
-    let ContentVM : RepositoryViewModel = RepositoryViewModel()
+    
+    @State var ContentVM : RepositoryViewModel = RepositoryViewModel()
 
     var body: some View {
         

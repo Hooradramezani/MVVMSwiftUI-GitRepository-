@@ -11,7 +11,7 @@ import Combine
 
 struct UserProfileView: View {
     
-    let ProfileVM : ProfileViewModel  = ProfileViewModel()
+    @ObservedObject var userProfile = ProfileViewModel()
     
     var body: some View {
         
@@ -21,28 +21,30 @@ struct UserProfileView: View {
             Text("User Profile")
                 .font(.title)
                 .foregroundColor(Color.accentColor)
+            
             VStack(alignment: .leading, spacing: 16){
                 
                 // Mark: - User Quick info
-                HStack{
+                HStack(alignment: .top){
                     Image("IMG_0065")
                         .resizable().renderingMode(.original)
                         .frame(width: 80, height: 80)
                         .clipped()
                         .scaledToFill()
                         .clipShape(Circle())
-                        
                     VStack (alignment: .leading, spacing: 8){
-                        Text(ProfileVM.userProfile.first?.username ?? "").font(.headline)
-                            .font(.subheadline)
-                            .lineLimit(4)
-                        Text(ProfileVM.userProfile.first?.bio ?? "").font(.subheadline)
-                            .font(.subheadline)
-                            .lineLimit(4)
-                        
+                        Text(userProfile.userProfile.first?.login ?? "FullName")
+                             .font(.headline)
+                             .font(.subheadline)
+                             .lineLimit(4)
+                        Text(userProfile.userProfile.first?.bio ?? "Bio")
+                             .font(.subheadline)
+                             .font(.subheadline)
+                             .lineLimit(5)
                     }
                 }
-                    .frame(height: nil)// end of - User Quick info
+                .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                // end of - User Quick info
                 
                 
                 Text("Contact info").font(.subheadline).bold()

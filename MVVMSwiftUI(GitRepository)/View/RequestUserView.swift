@@ -27,6 +27,8 @@ struct RequestUserView: View {
                     .cornerRadius(8)
             }
         }
+        .padding()
+        .background(Color.black)
     }
 }
 
