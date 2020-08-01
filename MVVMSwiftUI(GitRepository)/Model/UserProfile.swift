@@ -18,7 +18,7 @@ struct UserProfileModel : Identifiable , Decodable, Hashable{
     var following : Int = 99
     var twitter_username : String = ""
     var name : String = ""
-    var email : String = ""
+    //var email : String = ""
     var location : String = ""
     init(id:Int, login:String, bio:String) {
         self.id = id

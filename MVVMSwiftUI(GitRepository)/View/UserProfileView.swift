@@ -50,28 +50,27 @@ struct UserProfileView: View {
                     // Mark: - User Urls
                     
                     Text("Contact info")
-                        .font(.subheadline)
-                    
-                    HStack(){
-                        Text("✉️").font(.subheadline)
-                        Text(ProfileVM.userProfile.first?.email ?? "").font(.subheadline)
+                        .font(.headline)
+                    HStack{
+                        Text("📎").font(.subheadline)
+                        Text("https://dribbble.com/hoorad").font(.subheadline)
                     }
                     HStack{
                         Text("👥").font(.subheadline)
                         Text("\(ProfileVM.userProfile.first?.followers ?? 99) Followers • \(ProfileVM.userProfile.first?.following ?? 99) Following").font(.subheadline)
                     }
+                    
                     HStack{
                         Text("📍").font(.subheadline)
                         Text(ProfileVM.userProfile.first?.location ?? "Location").font(.subheadline)
                     }
-                    HStack{
-                        Text("Ⓜ️").font(.subheadline)
-                        Text("@hoorad_r").font(.subheadline)
-                    }
-                    HStack{
-                        Text("📎").font(.subheadline)
-                        Text("https://dribbble.com/hoorad").font(.subheadline)
-                    }
+//                    HStack{
+//                        Image("Twitter_icon")
+//                            .resizable()
+//                            .frame(width: 25, height: 25)
+//                            .clipped()
+//                        Text("@hoorad_r").font(.subheadline)
+//                    }
                     // end of - User Urls
                 }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 

@@ -20,6 +20,18 @@ class ProfileViewModel : ObservableObject{
         }
     }
     
+    @Published var userRepository = [UserRepositoryModel]() {
+        didSet{
+            didChange.send(self)
+        }
+    }
+    
+    @Published var isDataReady = false {
+        didSet{
+            didChange.send(self)
+        }
+    }
+    
     var service : ServiceController = ServiceController()
     
     
@@ -42,8 +54,17 @@ class ProfileViewModel : ObservableObject{
         if let jsonPetitions = try? decoder.decode(UserProfileModel.self, from: json) {
             DispatchQueue.main.async {
                 self.userProfile = [jsonPetitions]
+                self.isDataReady = true
             }
+        }else{
+            print("Can Not Decode Profile Data")
         }
     }
         
+}
+
+struct ProfileViewModel_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }

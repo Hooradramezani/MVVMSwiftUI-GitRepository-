@@ -15,7 +15,7 @@ class RepositoryViewModel : ObservableObject{
     
     var didChange = PassthroughSubject<RepositoryViewModel,Never>()
 
-    var userRepository = [UserRepositoryModel]() {
+    @Published var userRepository = [UserRepositoryModel]() {
         didSet{
             didChange.send(self)
         }

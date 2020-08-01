@@ -12,7 +12,6 @@
 		701382DA24D2F6AE007DE60E /* UserRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382D924D2F6AE007DE60E /* UserRepositoryView.swift */; };
 		701382DC24D2FF21007DE60E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382DB24D2FF21007DE60E /* UserRepository.swift */; };
 		701382DE24D31301007DE60E /* RequestUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382DD24D31301007DE60E /* RequestUserView.swift */; };
-		701382E024D31C0D007DE60E /* ActivityIndactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382DF24D31C0D007DE60E /* ActivityIndactor.swift */; };
 		701382E224D31EAA007DE60E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382E124D31EAA007DE60E /* Services.swift */; };
 		701382E424D31F07007DE60E /* ServiceNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382E324D31F07007DE60E /* ServiceNetworkLayer.swift */; };
 		701382E624D31F45007DE60E /* ServiceNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382E524D31F45007DE60E /* ServiceNetworkTools.swift */; };
@@ -53,7 +52,6 @@
 		701382D924D2F6AE007DE60E /* UserRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryView.swift; sourceTree = "<group>"; };
 		701382DB24D2FF21007DE60E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		701382DD24D31301007DE60E /* RequestUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUserView.swift; sourceTree = "<group>"; };
-		701382DF24D31C0D007DE60E /* ActivityIndactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndactor.swift; sourceTree = "<group>"; };
 		701382E124D31EAA007DE60E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		701382E324D31F07007DE60E /* ServiceNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkLayer.swift; sourceTree = "<group>"; };
 		701382E524D31F45007DE60E /* ServiceNetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkTools.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				701382D724D2F423007DE60E /* UserProfileView.swift */,
 				701382D924D2F6AE007DE60E /* UserRepositoryView.swift */,
 				701382DD24D31301007DE60E /* RequestUserView.swift */,
-				701382DF24D31C0D007DE60E /* ActivityIndactor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				701382D624D2E94A007DE60E /* ProfileViewModel.swift in Sources */,
 				701382D824D2F423007DE60E /* UserProfileView.swift in Sources */,
 				701382ED24D35A19007DE60E /* RepositoryViewModel.swift in Sources */,
-				701382E024D31C0D007DE60E /* ActivityIndactor.swift in Sources */,
 				701382E224D31EAA007DE60E /* Services.swift in Sources */,
 				70F70D9324D2B2EA00B97F04 /* UserProfile.swift in Sources */,
 				7090784824D2A20100C28DDF /* AppDelegate.swift in Sources */,
