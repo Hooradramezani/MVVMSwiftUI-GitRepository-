@@ -17,22 +17,25 @@ struct UserRepositoryView: View {
     var body: some View {
         
         VStack(alignment: .leading, spacing: 16){
-            // Mark: - User Ropos
-            Text("User Ropository").font(.title)
+            
+            // Mark: - User Repo
+            
+            Text("User Repository").font(.title)
                 .foregroundColor(Color.gray)
+            
             ForEach(ContentVM.userRepository,id: \.id){ rep in
-                    VStack(alignment: .leading, spacing: 8){
-                        Text(rep.name).font(.headline)
-                        Text(rep.full_name).font(.subheadline)
-                        HStack(){
-                            Text("⭐️ 5 Star").font(.callout)
-                            Text("🛠 2 Fork").font(.callout)
-                            Text("🟢 Swift").font(.callout)
-                        }
-                    }.padding(.bottom ,16)
+                
+                VStack(alignment: .leading, spacing: 8){
+                    Text(rep.name).font(.headline)
+                    Text(rep.full_name).font(.subheadline)
+                    HStack(){
+                        Text("⭐️ 5 Star").font(.callout)
+                        Text("🛠 2 Fork").font(.callout)
+                        Text("🟢 Swift").font(.callout)
+                    }
+                }.padding(.bottom,16.0)
             }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
             
-            // end of - User Repos
         }
     }
 }

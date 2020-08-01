@@ -15,39 +15,36 @@ struct UserProfileView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 16){
+        
+        VStack(alignment: .leading, spacing: 16.0){
             
-            // Mark: - User Profile
             Text("User Profile")
                 .font(.title)
                 .foregroundColor(Color.gray)
             
-            VStack(alignment: .leading, spacing: 16){
+            
+            VStack(alignment: .leading,spacing: 16.0){
                 
-                // Mark: - User Quick info
                 HStack(alignment: .top){
-                    Image("IMG_0065")
-                        .resizable().renderingMode(.original)
+                    Image("IMG_0065").renderingMode(.original)
+                        .resizable()
                         .frame(width: 80, height: 80)
                         .clipped()
                         .scaledToFill()
                         .clipShape(Circle())
-                    VStack (alignment: .leading, spacing: 8){
+                    
+                    VStack(alignment: .leading, spacing: 8){
                         
-                        Text(ProfileVM.userProfile.first?.login ?? "FullName")
+                        Text(ProfileVM.userProfile.first?.login ?? "unk")
                             .font(.headline)
-                             .lineLimit(4)
-                        Text(ProfileVM.userProfile.first?.bio ?? "Bio")
-                             .font(.subheadline)
-                             .lineLimit(4)
+                        Text(ProfileVM.userProfile.first?.bio ?? "unk")
+                            .font(.subheadline)
                     }
-                }
-                .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                // end of - User Quick info
+                    
+                }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
                 
                 VStack(alignment: .leading, spacing: 8){
-                    // Mark: - User Urls
                     
                     Text("Contact info")
                         .font(.headline)
@@ -59,25 +56,12 @@ struct UserProfileView: View {
                         Text("👥").font(.subheadline)
                         Text("\(ProfileVM.userProfile.first?.followers ?? 99) Followers • \(ProfileVM.userProfile.first?.following ?? 99) Following").font(.subheadline)
                     }
-                    
                     HStack{
                         Text("📍").font(.subheadline)
                         Text(ProfileVM.userProfile.first?.location ?? "Location").font(.subheadline)
                     }
-//                    HStack{
-//                        Image("Twitter_icon")
-//                            .resizable()
-//                            .frame(width: 25, height: 25)
-//                            .clipped()
-//                        Text("@hoorad_r").font(.subheadline)
-//                    }
-                    // end of - User Urls
-                }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-
-                                
-            }
-            .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-            //end of - User Profile
+                }
+            }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
         }
     }
 }
