@@ -11,7 +11,7 @@ import Combine
 
 struct UserProfileView: View {
     
-    @ObservedObject var ProfileVM = ProfileViewModel()
+    @ObservedObject var ProfileVM = UserVieModel()
     
     var body: some View {
                 

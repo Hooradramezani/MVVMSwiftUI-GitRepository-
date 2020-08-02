@@ -16,7 +16,6 @@ struct ServiceNetworkTools : ServiceToolsProtocol {
         return session
     }()
     
-    
     func configureRequestForDataTask(_ httpRequest: HTTPRequest) throws -> URLRequest {
         
         guard let method = httpRequest.method  else {

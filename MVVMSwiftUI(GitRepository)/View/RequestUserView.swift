@@ -1,39 +1,52 @@
 //
-//  RequestUserView.swift
+//  SearchBar.swift
 //  MVVMSwiftUI(GitRepository)
 //
 //  Created by Hoorad on 7/30/20.
 //  Copyright © 2020 Hoorad. All rights reserved.
 //
 
-import SwiftUI
-import Combine
 
-struct RequestUserView: View {
+import SwiftUI
+ 
+struct SearchBar: View {
     
-    @State var username: String = ""
-    
+    @Binding var text: String
+    @State private var isEditing = false
+    @ObservedObject var userVieModel = UserVieModel()
 
     var body: some View {
-        
-        VStack(alignment: .center, spacing: 16){
-            TextField("Enter you'r github username...", text: $username)
-                   .textFieldStyle(RoundedBorderTextFieldStyle())
-            Button(action: {
-                print("Reloading Data")                
-            }){
-                Text("Request")
-                .font(.headline)
-                    .cornerRadius(8)
+        HStack {
+ 
+            TextField("Search User ...", text: $text)
+                .padding(7)
+                .padding(.horizontal, 25)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 10)
+                .onTapGesture {
+                    self.isEditing = true
+                }
+ 
+            if isEditing {
+                Button(action: {
+                    self.isEditing = false
+                    self.userVieModel.isProfileReady = false
+                    self.userVieModel.isReposReady = false
+                    self.userVieModel.LoadData(user: self.text)
+                }) {
+                    Text("Search")
+                }
+                .padding(.trailing, 10)
+                .transition(.move(edge: .trailing))
+                .animation(.default)
             }
         }
-        .padding()
-        .background(Color.black)
     }
 }
 
-struct RequestUserView_Previews: PreviewProvider {
+struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        RequestUserView()
+        SearchBar(text: .constant(""))
     }
 }

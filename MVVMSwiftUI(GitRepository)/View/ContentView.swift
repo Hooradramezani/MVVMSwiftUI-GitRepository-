@@ -10,25 +10,30 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var ProfileVM = ProfileViewModel()
+    @ObservedObject var ProfileVM = UserVieModel()
+    @State var searchText : String = ""
     
     var body: some View {
         
         NavigationView{
             
-            if ProfileVM.isDataReady {
+            if ProfileVM.isProfileReady {
                 ScrollView{
                     VStack(alignment: .leading, spacing: 16){
+                        SearchBar(text: $searchText)
+                            .padding(.init(top: 16, leading: 8, bottom: 16, trailing: 8))
                         HStack{
                             UserProfileView()
                                 .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
                                 .animation(.default)
                             Spacer()
                         }
-                        UserRepositoryView()
-                            .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-                            .animation(.default)
-                        Spacer()
+                        if ProfileVM.isReposReady {
+                            UserRepositoryView()
+                                .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+                                .animation(.default)
+                            Spacer()
+                        }
                     }.navigationBarTitle("Github Account")
                 }
             }else{

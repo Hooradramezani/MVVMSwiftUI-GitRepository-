@@ -12,7 +12,7 @@ import Combine
 struct UserRepositoryView: View {
     
     
-    @ObservedObject var ProfileVM = ProfileViewModel()
+    @ObservedObject var ProfileVM = UserVieModel()
 
     var body: some View {
         
@@ -26,17 +26,17 @@ struct UserRepositoryView: View {
             VStack(alignment: .leading, spacing: 16) {
                 ForEach(ProfileVM.Repos,id: \.id){ rep in
                      
-                     VStack(alignment: .leading, spacing: 16){
-                         Text(rep.name).font(.headline)
-                         Text(rep.full_name).font(.subheadline)
+                     VStack(alignment: .leading, spacing: 8){
+                        Text(rep.name).font(.headline)
+                         Text(rep.full_name ?? "").font(.subheadline)
                          HStack(){
                              Text("⭐️ 5 Star").font(.callout)
                              Text("🛠 2 Fork").font(.callout)
                              Text("🟢 Swift").font(.callout)
                             Spacer()
                          }
-                        Text(rep.description).font(.body)
-
+                        
+                        Text(rep.description ?? "").font(.body)
                      }.padding(.init(top: 16, leading: 16, bottom: 24, trailing: 16))
                         .background(Color.white)
                         .foregroundColor(Color.black)
