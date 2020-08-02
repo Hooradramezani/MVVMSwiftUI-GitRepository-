@@ -12,29 +12,38 @@ import Combine
 struct UserRepositoryView: View {
     
     
-    @State var ContentVM : RepositoryViewModel = RepositoryViewModel()
+    @ObservedObject var ProfileVM = ProfileViewModel()
 
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 16){
+        VStack(alignment: .leading, spacing: 8){
             
             // Mark: - User Repo
             
             Text("User Repository").font(.title)
                 .foregroundColor(Color.gray)
             
-            ForEach(ContentVM.userRepository,id: \.id){ rep in
-                
-                VStack(alignment: .leading, spacing: 8){
-                    Text(rep.name).font(.headline)
-                    Text(rep.full_name).font(.subheadline)
-                    HStack(){
-                        Text("⭐️ 5 Star").font(.callout)
-                        Text("🛠 2 Fork").font(.callout)
-                        Text("🟢 Swift").font(.callout)
-                    }
-                }.padding(.bottom,16.0)
-            }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+            VStack(alignment: .leading, spacing: 16) {
+                ForEach(ProfileVM.Repos,id: \.id){ rep in
+                     
+                     VStack(alignment: .leading, spacing: 16){
+                         Text(rep.name).font(.headline)
+                         Text(rep.full_name).font(.subheadline)
+                         HStack(){
+                             Text("⭐️ 5 Star").font(.callout)
+                             Text("🛠 2 Fork").font(.callout)
+                             Text("🟢 Swift").font(.callout)
+                            Spacer()
+                         }
+                        Text(rep.description).font(.body)
+
+                     }.padding(.init(top: 16, leading: 16, bottom: 24, trailing: 16))
+                        .background(Color.white)
+                        .foregroundColor(Color.black)
+                    .cornerRadius(12)
+                 }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 16))
+ 
+            }
             
         }
     }

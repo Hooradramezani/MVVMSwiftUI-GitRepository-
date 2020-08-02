@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70092D6224D5AAC900A0875B /* AppStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70092D6124D5AAC900A0875B /* AppStateView.swift */; };
 		701382D624D2E94A007DE60E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382D524D2E94A007DE60E /* ProfileViewModel.swift */; };
 		701382D824D2F423007DE60E /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382D724D2F423007DE60E /* UserProfileView.swift */; };
 		701382DA24D2F6AE007DE60E /* UserRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382D924D2F6AE007DE60E /* UserRepositoryView.swift */; };
@@ -17,7 +18,6 @@
 		701382E624D31F45007DE60E /* ServiceNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382E524D31F45007DE60E /* ServiceNetworkTools.swift */; };
 		701382E824D31F69007DE60E /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382E724D31F69007DE60E /* ServiceProtocols.swift */; };
 		701382EB24D31F9E007DE60E /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382EA24D31F9E007DE60E /* HTTP.swift */; };
-		701382ED24D35A19007DE60E /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701382EC24D35A19007DE60E /* RepositoryViewModel.swift */; };
 		7090784824D2A20100C28DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090784724D2A20100C28DDF /* AppDelegate.swift */; };
 		7090784A24D2A20100C28DDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090784924D2A20100C28DDF /* SceneDelegate.swift */; };
 		7090784C24D2A20100C28DDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090784B24D2A20100C28DDF /* ContentView.swift */; };
@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70092D6124D5AAC900A0875B /* AppStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateView.swift; sourceTree = "<group>"; };
 		701382D524D2E94A007DE60E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		701382D724D2F423007DE60E /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		701382D924D2F6AE007DE60E /* UserRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryView.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		701382E524D31F45007DE60E /* ServiceNetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkTools.swift; sourceTree = "<group>"; };
 		701382E724D31F69007DE60E /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 		701382EA24D31F9E007DE60E /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
-		701382EC24D35A19007DE60E /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		7090784424D2A20100C28DDF /* MVVMSwiftUI(GitRepository).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVMSwiftUI(GitRepository).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7090784724D2A20100C28DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7090784924D2A20100C28DDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				701382D524D2E94A007DE60E /* ProfileViewModel.swift */,
-				701382EC24D35A19007DE60E /* RepositoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 				701382D724D2F423007DE60E /* UserProfileView.swift */,
 				701382D924D2F6AE007DE60E /* UserRepositoryView.swift */,
 				701382DD24D31301007DE60E /* RequestUserView.swift */,
+				70092D6124D5AAC900A0875B /* AppStateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,9 +338,9 @@
 				701382EB24D31F9E007DE60E /* HTTP.swift in Sources */,
 				701382D624D2E94A007DE60E /* ProfileViewModel.swift in Sources */,
 				701382D824D2F423007DE60E /* UserProfileView.swift in Sources */,
-				701382ED24D35A19007DE60E /* RepositoryViewModel.swift in Sources */,
 				701382E224D31EAA007DE60E /* Services.swift in Sources */,
 				70F70D9324D2B2EA00B97F04 /* UserProfile.swift in Sources */,
+				70092D6224D5AAC900A0875B /* AppStateView.swift in Sources */,
 				7090784824D2A20100C28DDF /* AppDelegate.swift in Sources */,
 				701382DE24D31301007DE60E /* RequestUserView.swift in Sources */,
 				7090784A24D2A20100C28DDF /* SceneDelegate.swift in Sources */,

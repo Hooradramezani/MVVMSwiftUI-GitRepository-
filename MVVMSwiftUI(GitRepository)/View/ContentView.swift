@@ -17,16 +17,22 @@ struct ContentView: View {
         NavigationView{
             
             if ProfileVM.isDataReady {
-                VStack(alignment: .leading, spacing: 16){
-                    UserProfileView()
-                        .padding(.init(top: 16, leading: 6, bottom: 16, trailing: 16))
-                        .animation(.interactiveSpring())
-                    UserRepositoryView()
-                        .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-                        .animation(.interactiveSpring())
-                }.navigationBarTitle("Github Account")
+                ScrollView{
+                    VStack(alignment: .leading, spacing: 16){
+                        HStack{
+                            UserProfileView()
+                                .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+                                .animation(.default)
+                            Spacer()
+                        }
+                        UserRepositoryView()
+                            .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+                            .animation(.default)
+                        Spacer()
+                    }.navigationBarTitle("Github Account")
+                }
             }else{
-                Text("Loading ...")
+                AppStateView()
             }
         }
         

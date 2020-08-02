@@ -14,35 +14,29 @@ struct UserProfileView: View {
     @ObservedObject var ProfileVM = ProfileViewModel()
     
     var body: some View {
-        
-        
-        VStack(alignment: .leading, spacing: 16.0){
+                
+        VStack(alignment: .leading, spacing: 16){
             
             Text("User Profile")
                 .font(.title)
                 .foregroundColor(Color.gray)
             
-            
-            VStack(alignment: .leading,spacing: 16.0){
+            VStack(alignment: .leading,spacing: 16){
                 
                 HStack(alignment: .top){
                     Image("IMG_0065").renderingMode(.original)
                         .resizable()
-                        .frame(width: 80, height: 80)
+                        .frame(width: 100, height: 100)
                         .clipped()
                         .scaledToFill()
                         .clipShape(Circle())
-                    
                     VStack(alignment: .leading, spacing: 8){
-                        
-                        Text(ProfileVM.userProfile.first?.login ?? "unk")
-                            .font(.headline)
-                        Text(ProfileVM.userProfile.first?.bio ?? "unk")
+                        Text(ProfileVM.User.first?.login ?? "")
+                            .font(.headline).bold()
+                        Text(ProfileVM.User.first?.bio ?? "")
                             .font(.subheadline)
                     }
-                    
-                }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                
+                }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 0))
                 
                 VStack(alignment: .leading, spacing: 8){
                     
@@ -54,15 +48,18 @@ struct UserProfileView: View {
                     }
                     HStack{
                         Text("👥").font(.subheadline)
-                        Text("\(ProfileVM.userProfile.first?.followers ?? 99) Followers • \(ProfileVM.userProfile.first?.following ?? 99) Following").font(.subheadline)
+                        Text("\(ProfileVM.User.first?.followers ?? 0) Followers • \(ProfileVM.User.first?.following ?? 0) Following").font(.subheadline)
                     }
                     HStack{
                         Text("📍").font(.subheadline)
-                        Text(ProfileVM.userProfile.first?.location ?? "Location").font(.subheadline)
+                        Text(ProfileVM.User.first?.location ?? "").font(.subheadline)
                     }
                 }
-            }.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-        }
+                .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 0))
+            }
+            
+        }.frame(alignment:.leading)        
+        
     }
 }
 

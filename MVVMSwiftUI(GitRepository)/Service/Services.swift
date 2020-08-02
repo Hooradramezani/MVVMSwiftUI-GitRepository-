@@ -17,6 +17,7 @@ struct ServiceController {
     
     enum ApisList{
         case UserProfile
+        case UserRepos
         var Request : HTTPRequest {
             switch self {
             case .UserProfile:
@@ -27,7 +28,16 @@ struct ServiceController {
                 feedRequest.host = "api.github.com"
                 feedRequest.headers = HTTPHeaders(["Content-Type":"application/json"])
                 return feedRequest
+            case .UserRepos:
+                var feedRequest = HTTPRequest()
+                feedRequest.method = HTTPMethod.get.rawValue
+                feedRequest.path = "/users/hooradramezani/repos"
+                feedRequest.scheme = "https"
+                feedRequest.host = "api.github.com"
+                feedRequest.headers = HTTPHeaders(["Content-Type":"application/json"])
+                return feedRequest
             }
+
         }
     }
     
