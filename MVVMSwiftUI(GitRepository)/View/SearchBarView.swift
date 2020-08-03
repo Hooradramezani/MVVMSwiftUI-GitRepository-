@@ -9,11 +9,11 @@
 
 import SwiftUI
  
-struct SearchBar: View {
+struct SearchBarView: View {
     
     @Binding var text: String
     @State private var isEditing = false
-    var userVieModel : UserVieModel
+    var viewModel : UserVieModel
 
     var body: some View {
         HStack {
@@ -27,13 +27,14 @@ struct SearchBar: View {
                 .onTapGesture {
                     self.isEditing = true
                 }
- 
             if isEditing {
                 Button(action: {
-                    self.isEditing = false
-                    self.userVieModel.isProfileReady = false
-                    self.userVieModel.isReposReady = false
-                    self.userVieModel.LoadData(user: self.text)
+                    if self.text != ""{
+                        self.isEditing = false
+                        self.viewModel.isProfileReady = false
+                        self.viewModel.isReposReady = false
+                        self.viewModel.LoadData(user: self.text)
+                    }
                 }) {
                     Text("Search")
                 }
@@ -47,6 +48,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""), userVieModel: UserVieModel())
+        SearchBarView(text: .constant(""), viewModel: UserVieModel())
     }
 }

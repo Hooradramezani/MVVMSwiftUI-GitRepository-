@@ -12,7 +12,7 @@ import Combine
 struct UserRepositoryView: View {
     
     
-    var ProfileVM : UserVieModel
+    var viewModel : UserVieModel
 
     var body: some View {
         
@@ -24,22 +24,41 @@ struct UserRepositoryView: View {
                 .foregroundColor(Color.gray)
             
             VStack(alignment: .leading, spacing: 16) {
-                ForEach(ProfileVM.Repos,id: \.id){ rep in
+                ForEach(viewModel.Repos,id: \.id){ rep in
                      
                      VStack(alignment: .leading, spacing: 8){
                         Text(rep.name).font(.headline)
                          Text(rep.full_name ?? "").font(.subheadline)
-                         HStack(){
-                             Text("⭐️ 5 Star").font(.callout)
-                             Text("🛠 2 Fork").font(.callout)
-                             Text("🟢 Swift").font(.callout)
+                        HStack(spacing:16){
+                            
+                            HStack{
+                                Image("Forkicon60")
+                                    .resizable()
+                                    .frame(width: 20, height: 20, alignment: .leading)
+                                    .clipped()
+                                    .foregroundColor(.white)
+                                Text("\(rep.forks_count ?? 0)")
+                                    .font(.callout)
+                            }
+                            HStack{
+                                Image("Staricon52")
+                                    .resizable()
+                                    .frame(width: 20, height: 20, alignment: .leading)
+                                    .clipped()
+                                Text("\(rep.stargazers_count ?? 0)")
+                                    .font(.callout)
+                            }
+                            HStack{
+                                Image("langicon52")
+                                    .resizable()
+                                    .frame(width: 20, height: 20, alignment: .leading).clipped()
+                                Text(rep.language ?? "unKnown").font(.callout).bold()                                    .foregroundColor(.red)
+                            }
                             Spacer()
                          }
-                        
-                        Text(rep.description ?? "").font(.body)
+                        Text(rep.description ?? "").font(.body).foregroundColor(Color.gray)
                      }.padding(.init(top: 16, leading: 16, bottom: 24, trailing: 16))
-                        .background(Color.white)
-                        .foregroundColor(Color.black)
+                        .background(Color(.systemGray6))
                     .cornerRadius(12)
                  }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 16))
  
@@ -51,6 +70,6 @@ struct UserRepositoryView: View {
 
 struct UserRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        UserRepositoryView(ProfileVM: UserVieModel())
+        UserRepositoryView(viewModel: UserVieModel())
     }
 }

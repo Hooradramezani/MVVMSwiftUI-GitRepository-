@@ -37,7 +37,6 @@ struct ServiceController {
                 feedRequest.headers = HTTPHeaders(["Content-Type":"application/json"])
                 return feedRequest
             }
-
         }
     }
     
@@ -47,39 +46,6 @@ struct ServiceController {
         }
     }
     
-//    func RequestProfileFor(UserName:String,completion: @escaping (Data?, Error?) -> Void){
-//        let req = RequestProfileForUsername(user: UserName)
-//        ServiceShared.DataTask(req) { (data, err) in
-//            completion(data,err)
-//        }
-//    }
-//
-//    func RequestReposFor(UserName:String,completion: @escaping (Data?, Error?) -> Void){
-//        let req = RequestReposForUsername(user: UserName)
-//        ServiceShared.DataTask(req) { (data, err) in
-//            completion(data,err)
-//        }
-//    }
-    // End Of MakeRequestFor Func
-    
-//    func RequestProfileForUsername(user:String) -> HTTPRequest {
-//        var feedRequest = HTTPRequest()
-//        feedRequest.method = HTTPMethod.get.rawValue
-//        feedRequest.path = "/users/\(Username)/repos"
-//        feedRequest.scheme = "https"
-//        feedRequest.host = "api.github.com"
-//        feedRequest.headers = HTTPHeaders(["Content-Type":"application/json"])
-//        return feedRequest
-//    }
-//    func RequestReposForUsername(user:String) -> HTTPRequest {
-//        var feedRequest = HTTPRequest()
-//        feedRequest.method = HTTPMethod.get.rawValue
-//        feedRequest.path = "/users/\(Username)/repos"
-//        feedRequest.scheme = "https"
-//        feedRequest.host = "api.github.com"
-//        feedRequest.headers = HTTPHeaders(["Content-Type":"application/json"])
-//        return feedRequest
-//    }
     
 }
 

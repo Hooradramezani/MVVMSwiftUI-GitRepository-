@@ -14,7 +14,6 @@ public enum HTTPMethod: String {
     case post = "POST"
 }
 
-
 public typealias HTTPParameters = [String: Any]?
 public typealias HTTPHeaders = [String: String]?
 
@@ -26,8 +25,6 @@ struct HTTPRequest{
     var headers: HTTPHeaders?
     var parameter: HTTPParameters?
 }
-
-import Foundation
 
 // The enumeration defines possible errrors to encounter during Network Request
 public enum HTTPNetworkError: String, Error {

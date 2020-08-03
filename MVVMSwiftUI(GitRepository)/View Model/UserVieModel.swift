@@ -21,9 +21,10 @@ class UserVieModel : ObservableObject{
     @Published var isProfileReady = false
     @Published var isReposReady = false
 
-    @Published var Username = "mohamedebrahim96"
+    @Published var Username : String = "hooradramezani"
 
     init() {
+        print("- State : App Start Fetching Data")
         LoadData(user: Username)
     }
     
@@ -36,11 +37,9 @@ class UserVieModel : ObservableObject{
     
     func loadProfile(){
         
-//        User.append(UserProfileModel(id: 1, login: "Hoorad Ramezani", bio: "My Bio", avatar_url: "", followers: 1, following: 11, twitter_username: "@Sat", name: "", location: "Erc"))
-        
         service.RequestFor(api: .UserProfile(Username)) { (data, err) in
             if let Data = data {
-                self.DecodeAndUpdateProfile(json: Data)
+                self.DecodeAndUpdateProfile(data: Data)
             }else{
                 print(err.debugDescription)
             }
@@ -57,12 +56,11 @@ class UserVieModel : ObservableObject{
         
     }
     
-    func DecodeAndUpdateProfile(json: Data) {
+    func DecodeAndUpdateProfile(data: Data) {
         let decoder = JSONDecoder()
-        if let jsonPetitions = try? decoder.decode(UserProfileModel.self, from: json) {
+        if let jsonPetitions = try? decoder.decode(UserProfileModel.self, from: data) {
             DispatchQueue.main.async {
                 self.User = [jsonPetitions]
-                print(self.User)
                 self.isProfileReady = true
             }
         }else{
@@ -73,7 +71,7 @@ class UserVieModel : ObservableObject{
     func DecodeAndUpdateRepos(data: Data) {
 
         do {
-            // make sure this JSON is in the format we expect
+            
             let decoder = JSONDecoder()
             if let jsonPetitions = try? decoder.decode([UserRepositoryModel].self, from: data) {
                 DispatchQueue.main.async {

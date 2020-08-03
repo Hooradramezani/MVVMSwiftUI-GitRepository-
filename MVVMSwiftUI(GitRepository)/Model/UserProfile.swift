@@ -18,8 +18,11 @@ struct UserProfileModel : Identifiable , Decodable, Hashable{
     var following : Int? = 0
     var twitter_username : String? = "Not Set"
     var name : String? = ""
-    //var email : String = ""
+    var email : String? = ""
     var location : String? = "Not Set"
+    var blog : String? = ""
+    var company: String? = ""
+
 
 
 

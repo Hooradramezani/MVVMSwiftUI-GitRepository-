@@ -47,8 +47,6 @@ struct ServiceNetworkTools : ServiceToolsProtocol {
             }
             request.allHTTPHeaderFields = headerfeilds
         }
-
-        
         return request
     }
     
@@ -94,7 +92,6 @@ struct ServiceNetworkTools : ServiceToolsProtocol {
         guard let data = data else { throw HTTPNetworkError.noData }
         return data
     }
-    
     
     func getURL(scheme:String,path:String,host:String) -> URL? {
         var component = URLComponents()
