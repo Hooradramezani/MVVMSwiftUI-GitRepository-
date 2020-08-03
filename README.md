@@ -20,3 +20,8 @@ Model view viewmodel (MVVM) is a software architectural pattern that facilitates
 * GeometryReader
 * Protocol
 
+# Appearance mode
+
+- [x] Dark Mode
+- [x] Light Mode
+
