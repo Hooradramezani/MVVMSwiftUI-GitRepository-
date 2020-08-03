@@ -1,4 +1,4 @@
 # MVVMSwiftUI GitRepository
 
 
-![GitHub Logo](/images/logo.png)
+Quick preview of GitHub account.
