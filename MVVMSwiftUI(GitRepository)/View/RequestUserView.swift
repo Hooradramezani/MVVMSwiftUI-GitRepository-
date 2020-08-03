@@ -13,7 +13,7 @@ struct SearchBar: View {
     
     @Binding var text: String
     @State private var isEditing = false
-    @ObservedObject var userVieModel = UserVieModel()
+    var userVieModel : UserVieModel
 
     var body: some View {
         HStack {
@@ -47,6 +47,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""))
+        SearchBar(text: .constant(""), userVieModel: UserVieModel())
     }
 }

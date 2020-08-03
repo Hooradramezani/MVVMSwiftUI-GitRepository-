@@ -12,7 +12,7 @@ import Combine
 struct UserRepositoryView: View {
     
     
-    @ObservedObject var ProfileVM = UserVieModel()
+    var ProfileVM : UserVieModel
 
     var body: some View {
         
@@ -51,6 +51,6 @@ struct UserRepositoryView: View {
 
 struct UserRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        UserRepositoryView()
+        UserRepositoryView(ProfileVM: UserVieModel())
     }
 }
