@@ -12,8 +12,6 @@ Model view viewmodel (MVVM) is a software architectural pattern that facilitates
 
 # Libraries And Frameworks
 
-list of libraries and frameworks :
-
 * SwiftUI
 * Combine
 * Foundation
