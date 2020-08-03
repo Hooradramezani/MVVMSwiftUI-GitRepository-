@@ -3,4 +3,5 @@
 
 Quick preview of GitHub account.
 
-Final1.png
+![GitHub Logo](/SwiftUIGithubAccountHeader.png)
+Format: ![Alt Text](url)
