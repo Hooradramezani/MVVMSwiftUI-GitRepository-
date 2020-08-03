@@ -11,7 +11,7 @@ import Combine
 
 struct UserRepositoryView: View {
     
-    
+    // Mark: - Properties
     var viewModel : UserVieModel
 
     var body: some View {
@@ -19,7 +19,6 @@ struct UserRepositoryView: View {
         VStack(alignment: .leading, spacing: 8){
             
             // Mark: - User Repo
-            
             Text("User Repository").font(.title)
                 .foregroundColor(Color.gray)
             
@@ -61,9 +60,7 @@ struct UserRepositoryView: View {
                         .background(Color(.systemGray6))
                     .cornerRadius(12)
                  }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 16))
- 
             }
-            
         }
     }
 }

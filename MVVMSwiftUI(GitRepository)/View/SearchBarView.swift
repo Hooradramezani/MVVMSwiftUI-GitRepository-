@@ -11,13 +11,15 @@ import SwiftUI
  
 struct SearchBarView: View {
     
+    // Mark: Properties
     @Binding var text: String
     @State private var isEditing = false
     var viewModel : UserVieModel
 
     var body: some View {
+        
+        // Mark: - SearchBar View
         HStack {
- 
             TextField("Search For User ...", text: $text)
                 .padding(7)
                 .padding(.horizontal, 25)

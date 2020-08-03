@@ -21,16 +21,25 @@ struct ContentView: View {
             // Mark: - Check Statement for availbe Profile
             if viewModel.isProfileReady {
                 ScrollView{
+                    
                     VStack(alignment: .leading, spacing: 16){
+                        
+                        // Mark: - Search User View
                         SearchBarView(text: $searchText, viewModel: viewModel)
                             .padding(.init(top: 16, leading: 8, bottom: 16, trailing: 8))
+                        
+                        // Mark: - Profile View
                         HStack{
                             UserProfileView(viewModel: viewModel)
                                 .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
                                 .animation(.default)
                             Spacer()
                         }
+                        
+                        // Mark: - Check Statement for availbe Repos
                         if viewModel.isReposReady {
+                            
+                            // Mark: - Profile View
                             UserRepositoryView(viewModel: viewModel)
                                 .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
                                 .animation(.default)
@@ -42,7 +51,6 @@ struct ContentView: View {
                 AppStateView(state: .loading)
             }
         }
-        
     }
 }
 

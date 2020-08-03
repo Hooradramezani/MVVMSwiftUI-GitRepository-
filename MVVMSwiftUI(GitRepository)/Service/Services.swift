@@ -10,11 +10,14 @@ import Foundation
 
 struct ServiceController {
     
+    // Mark: - Properties
     var ServiceShared : ServiceNetworkLayer = {
         let service = ServiceNetworkLayer()
         return service
     }()
     
+    
+    // Mark: - Api List 
     enum ApisList{
         case UserProfile(String)
         case UserRepos(String)
