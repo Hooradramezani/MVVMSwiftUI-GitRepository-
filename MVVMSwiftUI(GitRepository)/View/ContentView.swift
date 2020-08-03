@@ -38,7 +38,6 @@ struct ContentView: View {
                         
                         // Mark: - Check Statement for availbe Repos
                         if viewModel.isReposReady {
-                            
                             // Mark: - Profile View
                             UserRepositoryView(viewModel: viewModel)
                                 .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))

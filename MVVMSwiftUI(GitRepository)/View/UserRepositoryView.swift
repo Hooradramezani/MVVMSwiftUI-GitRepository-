@@ -55,11 +55,11 @@ struct UserRepositoryView: View {
                             }
                             Spacer()
                          }
-                        Text(rep.description ?? "").font(.body).foregroundColor(Color.gray)
-                     }.padding(.init(top: 16, leading: 16, bottom: 24, trailing: 16))
+                        Text(rep.description ?? "").font(.caption).foregroundColor(Color.gray)
+                     }.padding(.init(top: 16, leading: 16, bottom: 32, trailing: 0))
                         .background(Color(.systemGray6))
-                    .cornerRadius(12)
-                 }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 16))
+                        .cornerRadius(12)
+                 }.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
         }
     }
