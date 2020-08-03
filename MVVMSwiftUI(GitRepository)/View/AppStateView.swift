@@ -29,7 +29,6 @@ struct AppStateView: View {
         }
     }
     
-    
 }
 
 struct Loading_Previews: PreviewProvider {

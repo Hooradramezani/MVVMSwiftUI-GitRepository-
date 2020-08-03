@@ -12,6 +12,8 @@ import SwiftUI
 
 class UserVieModel : ObservableObject{
     
+    
+    // Mark: - Properties
     var service : ServiceController = ServiceController()
     
     var didChange = PassthroughSubject<Void,Never>()
@@ -20,15 +22,19 @@ class UserVieModel : ObservableObject{
     @Published var Repos = [UserRepositoryModel]()
     @Published var isProfileReady = false
     @Published var isReposReady = false
+    @Published var isInvalidData = false
+
 
     @Published var Username : String = "hooradramezani"
 
+    
+    // Mark: - init
     init() {
         print("- State : App Start Fetching Data")
         LoadData(user: Username)
     }
     
-    
+    // Mark: - Load Data From Username
     func LoadData(user:String){
         self.Username = user
         loadProfile()
@@ -36,7 +42,6 @@ class UserVieModel : ObservableObject{
     }
     
     func loadProfile(){
-        
         service.RequestFor(api: .UserProfile(Username)) { (data, err) in
             if let Data = data {
                 self.DecodeAndUpdateProfile(data: Data)
@@ -47,15 +52,15 @@ class UserVieModel : ObservableObject{
     }
     
     func LoadRepos(){
-                
         service.RequestFor(api: .UserRepos(Username)) { (data, err) in
             if let data = data {
                 self.DecodeAndUpdateRepos(data: data)
             }
         }
-        
     }
     
+    
+    // Mark: - Decode Profile Data And Update Status
     func DecodeAndUpdateProfile(data: Data) {
         let decoder = JSONDecoder()
         if let jsonPetitions = try? decoder.decode(UserProfileModel.self, from: data) {
@@ -65,13 +70,13 @@ class UserVieModel : ObservableObject{
             }
         }else{
             print("Can Not Decode Profile Data")
+            self.isInvalidData = true
         }
     }
     
+    // Mark: - Decode Repos Data And Update Status
     func DecodeAndUpdateRepos(data: Data) {
-
         do {
-            
             let decoder = JSONDecoder()
             if let jsonPetitions = try? decoder.decode([UserRepositoryModel].self, from: data) {
                 DispatchQueue.main.async {
@@ -80,6 +85,7 @@ class UserVieModel : ObservableObject{
                 }
             }else{
                 print("Can Not Decode Repos Data")
+                self.isInvalidData = true
             }
         }
     }

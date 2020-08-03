@@ -48,7 +48,18 @@ struct ContentView: View {
                     }.navigationBarTitle("Github Account")
                 }
             }else{
-                AppStateView(state: .loading)
+                if viewModel.isInvalidData{
+                    VStack(spacing:16){
+                        Text("Opps We Have Invalid Data")
+                        Button(action: {
+                            self.viewModel.LoadData(user: "Hooradramezani")
+                        }) {
+                            Text("Home")
+                        }
+                    }
+                }else{
+                    AppStateView(state: .loading)
+                }
             }
         }
     }
