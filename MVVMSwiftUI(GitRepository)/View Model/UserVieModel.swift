@@ -25,7 +25,7 @@ class UserVieModel : ObservableObject{
     @Published var isInvalidData = false
 
 
-    @Published var Username : String = "hooradramezani"
+    @Published var Username : String = "ihoorados"
 
     
     // Mark: - init

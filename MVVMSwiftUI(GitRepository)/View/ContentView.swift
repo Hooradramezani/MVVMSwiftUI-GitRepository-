@@ -51,7 +51,7 @@ struct ContentView: View {
                     VStack(spacing:16){
                         Text("Opps We Have Invalid Data")
                         Button(action: {
-                            self.viewModel.LoadData(user: "Hooradramezani")
+                            self.viewModel.LoadData(user: "ihoorados")
                         }) {
                             Text("Home")
                         }
